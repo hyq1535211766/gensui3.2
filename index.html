@@ -5,24 +5,44 @@
 		<title></title>
 	</head>
 	<body>
-		<input type="text" value="输入账号" />
+		<input type="text" name="txt" value="输入账号" />
 	</body>
+	
+	
+		
 	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		
-		$(function(){ 
-			$('input').bind({ 
-			focus:function(){ 
-			if (this.value == this.defaultValue){ 
-				this.value=""; 
-				} 
-				}, 
-			blur:function(){ 
-			if (this.value == ""){ 
-				this.value = this.defaultValue; 
-				} 
-				} 
-			}); 
-			}); 
+	var txt=$("#txt").val();
+		$("#txt").on("focus",function(){
+			if($(this).val()==txt){
+				$(this).val("");
+			}
+			
+		});
+		$("#txt").on("blur",function(){
+			if($(this)[0].value==""){
+				$(this).val(txt);
+			}
+		});
+
+
+//	<!--<script type="text/javascript">
+//		
+//		$(function(){ 
+//			$('input').bind({ 
+//			focus:function(){ 
+//			if (this.value == this.defaultValue){ 
+//				this.value=""; 
+//				} 
+//				}, 
+//			blur:function(){ 
+//			if (this.value == ""){ 
+//				this.value = this.defaultValue; 
+//				} 
+//				} 
+//			}); 
+//			}); 
+//	</script>-->
+	
 	</script>
 </html>

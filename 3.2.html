@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="{utf-8}">
+		<title></title>
+		<script src="../jquery-3.2.0.js"></script>
+		<style>
+			.box{
+				height: 200px;
+				width: 200px;
+				position: absolute;
+				border: 1px solid gray;
+			}
+		</style>
+	</head>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<body>
+		<div class="box"></div>
+	</body>
+	<html>
+
+	<script>
+		$(".box").mousedown(function(e) {
+			$(document).bind("mousemove", function(e) {
+				$(".box").css("left", e.clientX).css("top", e.clientY)
+			});
+		})
+		$(".box").mouseup(function() {
+			$(document).unbind("mousemove")
+		})
+	</script>
